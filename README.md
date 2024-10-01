@@ -42,7 +42,7 @@ Get audio summarizes for any website, blog or paper
 ├── pyproject.toml
 ├── poetry.lock
 ├── notebooks/
-│   └── ... (your Jupyter notebooks)
+│   └── main.ipynb
 └── README.md
 ```
 

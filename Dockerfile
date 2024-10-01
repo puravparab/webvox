@@ -1,18 +1,16 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y \
-	build-essential \
-	curl \
-	&& rm -rf /var/lib/apt/lists/*
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install Poetry
-RUN curl -sSL https://install.python-poetry.org | python3 -
-ENV PATH="${PATH}:/root/.local/bin"
-COPY pyproject.toml poetry.lock* ./
-RUN poetry config virtualenvs.create false \
-	&& poetry install --no-interaction --no-ansi
+# Copy requirements file
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the notebooks and the rest of the application code
 COPY notebooks/ ./notebooks/
