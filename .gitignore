@@ -17,3 +17,6 @@ dist/
 
 # Environment Variables
 .env
+
+# Models
+models/

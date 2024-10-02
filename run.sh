@@ -14,5 +14,8 @@ check_error "Failed to build Docker image"
 
 # Run the Docker container
 echo "Running Docker container..."
-docker run -p 8888:8888 -v "$(pwd)/notebooks:/app/notebooks" webvox
+docker run -p 8888:8888 \
+				-v "$(pwd)/notebooks:/app/notebooks" \
+				-v "$(pwd)/models:/app/models" \
+				webvox
 check_error "Failed to run Docker container"
