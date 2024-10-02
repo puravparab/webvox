@@ -14,3 +14,6 @@ dist/
 
 # Miscellaneous
 .DS_Store
+
+# Environment Variables
+.env

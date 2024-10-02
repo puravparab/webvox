@@ -12,24 +12,22 @@ Get audio summarizes for any website, blog or paper
 1. Clone this repository:
 	```
 	git clone https://github.com/puravparab/webvox.git
-	```
-	or
-	```
-	git clone git@github.com:puravparab/webvox.git
-	```
-	```
 	cd webvox
 	```
-
-2. Build the Docker image:
+2. Add environment variables to `notebooks/.env`
+	```
+	HF_TOKEN=
+	```
+3. Use Docker
    ```
    docker build -t webvox .
-   ```
-
-3. Run the Docker container:
-   ```
    docker run -p 8888:8888 -v $(pwd)/notebooks:/app/notebooks webvox
    ```
+4. Use shell script
+	```
+	chmod +x run.sh
+	./run.sh
+	```
 
 4. Run the jupyter notebook: [http://localhost:8888](http://localhost:8888)
 
@@ -39,8 +37,6 @@ Get audio summarizes for any website, blog or paper
 ```
 .
 ├── Dockerfile
-├── pyproject.toml
-├── poetry.lock
 ├── notebooks/
 │   └── main.ipynb
 └── README.md

@@ -6,6 +6,8 @@ class Content:
 		self.url = url
 		self.content_type = content_type
 		self.text = None
+		self.tokens = 0
+		self.tokenizer = None
 
 	def scrape(self):
 		response = requests.get(self.url)
@@ -19,3 +21,10 @@ class Content:
 
 	def _scrape_blog(self, soup):
 		return soup.get_text(separator=' ', strip=True) if soup else None
+
+	def _tokenize(self, tokenizer):
+		self.tokenizer = tokenizer
+		if self.text:
+			tokens = self.tokenizer.encode(self.text)
+			self.tokens = len(tokens)
+			return self.tokens

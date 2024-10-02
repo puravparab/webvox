@@ -1,3 +1,8 @@
 jupyter
 bs4
 requests
+transformers
+torch
+accelerate
+sentencepiece
+python-dotenv
