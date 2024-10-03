@@ -122,7 +122,7 @@ def login_hf():
 	login(token=hf_token)
 
 
-def load_model(repo_id, filename, model_dir="../models"):
+def load_model(repo_id, filename, model_dir="../models", verbose=False, context_length=3000):
 	"""
 	Load the Llama model using the official API, storing it in ../models/.
 
@@ -142,56 +142,16 @@ def load_model(repo_id, filename, model_dir="../models"):
 	else:
 		print(f"Downloading model: `{filename}` to models/")
 
+
 	return Llama.from_pretrained(
-		repo_id=repo_id,
-		filename=filename,
-		cache_dir=model_dir,
-		verbose=False
+		repo_id=repo_id,           # Hugging Face repository ID
+		filename=filename,         # Specific model file to load
+		cache_dir=model_dir,       # Directory to store the model
+		verbose=verbose,           # Enable detailed output during loading
+		n_ctx=context_length,      # Set context window size (adjust as needed)
+		# n_gpu_layers=-1,         # Use all available GPU layers
+		# use_metal=True,          # Enable Metal acceleration for M-series chips
+		# use_mlock=True,          # Lock memory to prevent swapping
+		# use_mmap=True,           # Use memory mapping for faster loading
+		# n_threads=os.cpu_count() # Use all available CPU cores
 	)
-
-# def load_model(model_name, model_type="llama"):
-# 	"""
-# 	Load the model and tokenizer. If the model doesn't exist locally, download it from Hugging Face.
-
-# 	Args:
-# 		model_name (str): Name of the model on Hugging Face (e.g., "lmstudio-community/Llama-3.2-3B-Instruct-GGUF").
-# 		model_type (str): Type of the model (default is "llama").
-
-# 	Returns:
-# 		tuple: (model, tokenizer)
-# 	"""
-# 	# Define the local directory to store models
-# 	current_dir = os.path.dirname(os.path.abspath(__file__))
-# 	local_model_dir = os.path.join(current_dir, "models")
-# 	if not os.path.exists(local_model_dir):
-# 		os.makedirs(local_model_dir)
-
-# 	# Extract the filename from the model_name
-# 	model_filename = model_name.split("/")[-1] + ".gguf"
-# 	local_model_path = os.path.join(local_model_dir, model_filename)
-
-# 	# Check if the model exists locally
-# 	if not os.path.exists(local_model_path):
-# 		print(f"Model not found locally. Downloading from Hugging Face: {model_name}")
-# 		try:
-# 			# Download the model from Hugging Face
-# 			hf_hub_download(repo_id=model_name, filename=model_filename, local_dir=local_model_dir)
-# 		except Exception as e:
-# 			print(f"Error downloading the model: {e}")
-# 			return None, None
-
-# 	# Load the model
-# 	try:
-# 		model = AutoModelForCausalLM.from_pretrained(local_model_path, model_type=model_type)
-# 	except Exception as e:
-# 		print(f"Error loading the model: {e}")
-# 		return None, None
-
-# 	# Load the tokenizer
-# 	try:
-# 		tokenizer = AutoTokenizer.from_pretrained(model_name)
-# 	except Exception as e:
-# 		print(f"Error loading the tokenizer: {e}")
-# 		return model, None
-
-# 	return model, tokenizer

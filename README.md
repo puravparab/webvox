@@ -5,9 +5,8 @@ Get audio summarizes for any website, blog or paper
 ## Prerequisites
 
 - Docker
-- Poetry
 
-## Getting Started
+## Setup
 
 1. Clone this repository:
 	```
@@ -29,29 +28,21 @@ Get audio summarizes for any website, blog or paper
 	./run.sh
 	```
 
-4. Run the jupyter notebook: [http://localhost:8888](http://localhost:8888)
+4. Run the jupyter notebook: [http://localhost:8888/main.ipynb](http://localhost:8888)
 
 
 ## Project Structure
 
 ```
-.
+webvox
 ├── Dockerfile
+├── models/
 ├── notebooks/
 │   └── main.ipynb
+├── notebooks/
 └── README.md
 ```
 
 ## Adding Dependencies
 
-To add new dependencies to the project:
-
-1. Locally:
-   ```
-   poetry add package-name
-   ```
-
-2. Rebuild the Docker image to reflect changes:
-   ```
-   docker build -t webvox .
-   ```
+Add them to requirements.txt
