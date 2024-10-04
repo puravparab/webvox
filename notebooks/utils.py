@@ -122,17 +122,23 @@ def login_hf():
 	login(token=hf_token)
 
 
-def load_model(repo_id, filename, model_dir="../models", verbose=False, context_length=3000):
+def load_text_model(repo_id, filename, model_dir="../models", verbose=False, context_length=3000):
 	"""
-	Load the Llama model using the official API, storing it in ../models/.
+	Load a Llama model using the llama-cpp-python library.
+
+	This function downloads (if necessary) and loads a Llama model from the Hugging Face
+	Hub. It uses the llama-cpp-python library to create a Llama object, which can be
+	used for inference.
 
 	Args:
 		repo_id (str): Repository ID on Hugging Face (e.g., "lmstudio-community/Llama-3.2-3B-Instruct-GGUF").
 		filename (str): Specific filename of the model (e.g., "Llama-3.2-3B-Instruct-Q3_K_L.gguf").
-		model_dir (str): Directory to store the model files. Defaults to "models/".
+		model_dir (str): Directory to store the model files. Defaults to "../models/".
+		verbose (bool): Enable detailed output during loading. Defaults to False.
+		context_length (int): Set context window size. Defaults to 3000.
 
 	Returns:
-		Llama: Loaded model
+		Llama: Loaded model object ready for inference.
 	"""
 	os.makedirs(model_dir, exist_ok=True)
 	full_path = os.path.join(model_dir, filename)

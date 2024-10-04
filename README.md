@@ -20,7 +20,7 @@ Get audio summarizes for any website, blog or paper
 3. Use Docker
    ```
    docker build -t webvox .
-   docker run -p 8888:8888 -v $(pwd)/notebooks:/app/notebooks webvox
+  docker run -p 8888:8888 -v $(pwd)/notebooks:/app/notebooks -v $(pwd)/models:/app/models webvox
    ```
 4. Use shell script
 	```

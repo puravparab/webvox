@@ -12,9 +12,6 @@ COPY requirements.txt .
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Create models directory
-RUN mkdir -p /app/models
-
 # Copy the notebooks and the rest of the application code
 COPY notebooks/ ./notebooks/
 

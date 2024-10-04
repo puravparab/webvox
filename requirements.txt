@@ -1,6 +1,5 @@
 accelerate
 bs4
-ctransformers
 huggingface_hub
 jupyter
 llama-cpp-python
