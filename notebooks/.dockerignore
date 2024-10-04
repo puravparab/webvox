@@ -1,0 +1,26 @@
+# Version control
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv
+
+# Jupyter
+**/.ipynb_checkpoints
+
+# Poetry
+dist
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Miscellaneous
+**/.DS_Store
+README.md

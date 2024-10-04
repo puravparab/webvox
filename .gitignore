@@ -9,9 +9,6 @@ __pycache__/
 .venv/
 dist/
 
-# Docker
-.dockerignore
-
 # Miscellaneous
 .DS_Store
 
