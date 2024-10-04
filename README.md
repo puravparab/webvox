@@ -2,12 +2,7 @@
 
 Get audio summarizes for any website, blog or paper
 
-## Prerequisites
-
-- Docker
-
 ## Usage
-
 1. Clone this repository:
 	```
 	git clone https://github.com/puravparab/webvox.git
@@ -24,6 +19,8 @@ Get audio summarizes for any website, blog or paper
 
 2. Run the jupyter notebook: [http://localhost:8888/main.ipynb](http://localhost:8888)
 
+## Prerequisites
+- Docker
 
 ## Project Structure
 
@@ -32,6 +29,7 @@ webvox
 ├── notebooks/
 |   ├── Dockerfile
 |   ├── models/
+|   ├── outputs/
 │   └── main.ipynb
 └── README.md
 ```

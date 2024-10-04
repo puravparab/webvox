@@ -3,9 +3,10 @@ bs4
 huggingface_hub
 jupyter
 llama-cpp-python
+mecab-python3
 python-dotenv
 requests
+sentencepiece
 tiktoken
 torch
 transformers
-sentencepiece

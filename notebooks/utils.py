@@ -122,7 +122,7 @@ def login_hf():
 	login(token=hf_token)
 
 
-def load_text_model(repo_id, filename, model_dir="../models", verbose=False, context_length=3000):
+def load_text_model(repo_id, filename, model_dir="models", verbose=False, context_length=3000):
 	"""
 	Load a Llama model using the llama-cpp-python library.
 
@@ -133,7 +133,7 @@ def load_text_model(repo_id, filename, model_dir="../models", verbose=False, con
 	Args:
 		repo_id (str): Repository ID on Hugging Face (e.g., "lmstudio-community/Llama-3.2-3B-Instruct-GGUF").
 		filename (str): Specific filename of the model (e.g., "Llama-3.2-3B-Instruct-Q3_K_L.gguf").
-		model_dir (str): Directory to store the model files. Defaults to "../models/".
+		model_dir (str): Directory to store the model files. Defaults to "models/".
 		verbose (bool): Enable detailed output during loading. Defaults to False.
 		context_length (int): Set context window size. Defaults to 3000.
 
