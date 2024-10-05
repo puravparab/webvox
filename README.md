@@ -11,16 +11,13 @@ Get audio summarizes for any website, blog or paper
 
 ### Notebooks
 1. Follow the notebook [README](./notebooks) if you're setting up notebooks for the first time
-1. Use shell script if you've completed inital setup
+2. Use shell script if you've completed inital setup
 	```
 	chmod +x run.sh
 	./run.sh
 	```
 
-2. Run the jupyter notebook: [http://localhost:8888/main.ipynb](http://localhost:8888)
-
-## Prerequisites
-- Docker
+3. Run the jupyter notebook: [http://localhost:8888/main.ipynb](http://localhost:8888)
 
 ## Project Structure
 
