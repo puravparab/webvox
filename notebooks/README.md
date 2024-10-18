@@ -1,27 +1,32 @@
 # Webvox Notebooks
+This directory consists of a notebook that demonstrates a audio summary pipeline that scrapes content from the web, summarizes it and creates an audio clip from the summary.
 
-Notebooks provide a guide for scraping, text summarization and text-to-speech generation
+## Requirements
+- python 3.11
 
 ## Setup
-
-1. Add environment variables to a `.env` file
-	```
-	HF_TOKEN=
-	```
-2. Clone the MeloTTS repo
+If MeloTTS is not in `models/` then run:
 ```
-cd models
-git clone https://github.com/myshell-ai/MeloTTS.git
-cd ..
+git pull --recurse-submodules
 ```
-3. Build and run Docker
-	```
-	docker build -t webvox .
-	docker run -p 8888:8888 -v "$(pwd):/app" -v "$(pwd)/outputs:/app/outputs" -v "$(pwd)/models:/app/models" webvox
-	```
 
-4. Run the jupyter notebook: [http://localhost:8888/main.ipynb](http://localhost:8888)
+Activate poetry shell and install libraries:
+```
+poetry shell
+```
+```
+poetry install
+```
 
-## Adding Dependencies
+Run the following commands:
+```
+poetry run pip install -e ./models/MelosTTS
+```
+```
+poetry run python -m unidic download
+```
 
-Add them to requirements.txt
+Run the jupyter notebook:
+```
+jupyter notebook
+```

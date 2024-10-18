@@ -1,0 +1,3 @@
+[submodule "notebooks/models/MeloTTS"]
+	path = notebooks/models/MeloTTS
+	url = https://github.com/myshell-ai/MeloTTS.git
