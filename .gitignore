@@ -10,7 +10,7 @@ __pycache__/
 dist/
 
 # Miscellaneous
-.DS_Store
+**/.DS_Store
 
 # Environment Variables
 .env
