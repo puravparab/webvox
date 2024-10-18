@@ -6,13 +6,15 @@ authors = ["Purav <puravparabdev@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 ollama = "^0.3.3"
 bs4 = "^0.0.2"
 tiktoken = "^0.8.0"
 requests = "^2.32.3"
 unidic = "^1.1.0"
 nltk = "^3.9.1"
+mecab-python3 = "^1.0.9"
+ipadic = "^1.0.0"
 
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.1.1"
